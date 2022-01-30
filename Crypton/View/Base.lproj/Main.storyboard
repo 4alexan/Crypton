@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gmv-m0-TGS">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Coin View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CoinViewController" customModule="Crypton" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg5" translatesAutoresizingMaskIntoConstraints="NO" id="R0V-KR-hcA">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="926" id="O5r-cg-VqW"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="428" id="skQ-Je-rqp"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RUB" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="363-Ow-86C">
+                                <rect key="frame" x="174" y="164" width="80" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="7iM-po-9mb"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="79.5" id="9LO-VW-yyA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="45"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="uUC-sI-Gty">
+                                <rect key="frame" x="48" y="267.66666666666669" width="332" height="396.00000000000006"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pickerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uUC-sI-Gty" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="21M-GE-aos"/>
+                            <constraint firstItem="363-Ow-86C" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5tW-ez-Scj"/>
+                            <constraint firstItem="363-Ow-86C" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="2" id="8LY-Iu-z9v"/>
+                            <constraint firstAttribute="bottom" secondItem="R0V-KR-hcA" secondAttribute="bottom" id="Ahr-bg-dsg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="363-Ow-86C" secondAttribute="bottom" priority="999" constant="630" id="PFn-A0-LDZ"/>
+                            <constraint firstItem="uUC-sI-Gty" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="T13-xi-noZ"/>
+                            <constraint firstItem="R0V-KR-hcA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="V1h-Zy-dYk"/>
+                            <constraint firstItem="uUC-sI-Gty" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.775701" id="X53-wn-tEm"/>
+                            <constraint firstItem="uUC-sI-Gty" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.427646" id="qzm-Zq-jP8"/>
+                            <constraint firstItem="R0V-KR-hcA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tAL-fd-8n2"/>
+                            <constraint firstItem="R0V-KR-hcA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zCq-gh-34b"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="PP6-Jc-g0w">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="svC-Gz-173">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="AddCoinItem:" destination="BYZ-38-t0r" id="Tee-iC-FXQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="coinLabel" destination="363-Ow-86C" id="8sX-7O-mwd"/>
+                        <outlet property="pickConvertCoin" destination="uUC-sI-Gty" id="Tej-uN-kJN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="958.87850467289718" y="77.105831533477328"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="z9B-E7-hca">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gmv-m0-TGS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jY4-Pm-R6c">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sSI-E8-zxs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SHN-SR-0tJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33.846153846153847" y="79.620853080568722"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg5" width="375" height="812"/>
+    </resources>
+</document>
