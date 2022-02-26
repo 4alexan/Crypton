@@ -1,0 +1,135 @@
+{
+  "Name": "Bitcoin",
+  "Code": "BTC",
+  "Symbol": "₿"
+},
+{
+  "Name": "Ethereum",
+  "Code": "ETH",
+  "Symbol": "Ξ"
+},
+{
+  "Name": "XRP",
+  "Code": "XRP",
+  "Symbol": "✕"
+},
+{
+  "Name": "Tether",
+  "Code": "USDT",
+  "Symbol": "₮"
+},
+{
+  "Name": "Cardano",
+  "Code": "ADA",
+  "Symbol": "₳"
+},
+{
+  "Name": "Dogecoin",
+  "Code": "DOGE",
+  "Symbol": "Ð"
+},
+{
+  "Name": "Litecoin",
+  "Code": "LTC",
+  "Symbol": "Ł"
+},
+{
+  "Name": "Bitcoin Cash",
+  "Code": "BCH",
+  "Symbol": "Ƀ"
+},
+{
+  "Name": "Stellar Lumens",
+  "Code": "XLM",
+  "Symbol": "🚀"
+},
+{
+  "Name": "THETA",
+  "Code": "THETA",
+  "Symbol": "ϑ"
+},
+{
+  "Name": "Filecoin",
+  "Code": "FIL",
+  "Symbol": "⨎"
+},
+{
+  "Name": "EOS",
+  "Code": "EOS",
+  "Symbol": "ε"
+},
+{
+  "Name": "Bitcoin SV ",
+  "Code": "BSV",
+  "Symbol": "Ɓ"
+},
+{
+  "Name": "Monero",
+  "Code": "XMR",
+  "Symbol": "ɱ"
+},
+{
+  "Name": "Tezos",
+  "Code": "XTZ",
+  "Symbol": "ꜩ"
+},
+{
+  "Name": "Ethereum Classic ",
+  "Code": "ETC",
+  "Symbol": "ξ"
+},
+{
+  "Name": "Dai",
+  "Code": "DAI",
+  "Symbol": "◈"
+},
+{
+  "Name": "Zcash",
+  "Code": "ZEC",
+  "Symbol": "ⓩ"
+},
+{
+  "Name": "Basic Attention Token",
+  "Code": "BAT",
+  "Symbol": "⟁"
+},
+{
+  "Name": "Nano",
+  "Code": "XNO",
+  "Symbol": "Ӿ"
+},
+{
+  "Name": "Lisk",
+  "Code": "LSK",
+  "Symbol": "Ⱡ"
+},
+{
+  "Name": "Steem",
+  "Code": "STEEM",
+  "Symbol": "ȿ"
+},
+{
+  "Name": "Reddcoin",
+  "Code": "RDD",
+  "Symbol": "Ɍ"
+},
+{
+  "Name": "Navcoin",
+  "Code": "NAV",
+  "Symbol": "Ꞥ"
+},
+{
+  "Name": "Namecoin",
+  "Code": "NMC",
+  "Symbol": "ℕ"
+},
+{
+  "Name": "Peercoin",
+  "Code": "PPC",
+  "Symbol": "Ᵽ"
+},
+{
+  "Name": "Primecoin",
+  "Code": "XPM",
+  "Symbol": "Ψ"
+}

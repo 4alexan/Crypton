@@ -5,6 +5,9 @@
 //  Created by Alexandr on 30.11.2021.
 //
 
+// https://stackoverflow.com/questions/31999748/get-currency-symbols-from-currency-code-with-swift
+// help for symbol
+
 import Foundation
 
 protocol CoinManagerDelegate {
@@ -19,12 +22,14 @@ struct CoinManager {
     var delegate: CoinManagerDelegate?
     
     let coinURL = "https://rest.coinapi.io/v1/exchangerate"
+//    let assetsURL = "https://rest.coinapi.io/v1/assets"
 
     func fetchExchangeRate(_ from: String, to: String) {
         
-        let finalURL = "\(coinURL)/\(from)/\(to)?apikey=2E9AC9DA-E7DB-4BDE-8CDE-1598D1DF8C1D&output_format=json"
+        let apiKey = ""
+        let finalURL = "\(coinURL)/\(from)/\(to)?apikey=\(apiKey)&output_format=json"
         
-        // Выполнить запрос по URL
+        // Perform request URL
         performRequest(with: finalURL)
         
     }
@@ -36,7 +41,7 @@ struct CoinManager {
         if let url = URL(string: finalURL) {
             
             // 2. Create a URLSession
-            let session = URLSession(configuration: .default) // Or URLSession.shared
+            let session = URLSession(configuration: .default) // Or URLSession.shared // Or URLSession.shared.dataTask(with: url)
             
             let task = session.dataTask(with: url) {(data, response, error) in
                 

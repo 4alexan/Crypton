@@ -21,3 +21,16 @@ struct CoinData: Codable {
     var rate: Double
     
 }
+
+// For CryptoCurrency JSON
+struct Result: Codable {
+    var data: [CoinSymbol]
+}
+
+struct CoinSymbol: Codable {
+    
+    var Name: String
+    var Code: String
+    var Symbol: String
+    
+}
