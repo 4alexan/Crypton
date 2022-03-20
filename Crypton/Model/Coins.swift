@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Coins {
+class Coins: Codable {
     var coinName: String = ""
     var coinViewName: String = ""
 }

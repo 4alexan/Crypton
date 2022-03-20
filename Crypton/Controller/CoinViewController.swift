@@ -24,45 +24,49 @@ class CoinViewController: UIViewController {
     
     var coinManager = CoinManager()
     
+    let coinDataFile = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Coin.plist")
+    
+    let cryptoCoinDataFile = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("CryptoCoin.plist")
+    
+    let encoder = PropertyListEncoder()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let coinEUR = Coins()
-        coinEUR.coinName = "EUR"
-        coinEUR.coinViewName = "€ EUR"
-        coins.append(coinEUR)
+        let coinLTC = Coins()
+        coinLTC.coinName = "LTC"
+        coinLTC.coinViewName = "Ł LTC"
+        cryptoCoins.append(coinLTC)
+
+        let coinBTC = Coins()
+        coinBTC.coinName = "BTC"
+        coinBTC.coinViewName = "₿ BTC"
+        cryptoCoins.append(coinBTC)
         
-        let coinRUB = Coins()
-        coinRUB.coinName = "RUB"
-        coinRUB.coinViewName = "₽ RUB"
-        coins.append(coinRUB)
+        let coinDOGE = Coins()
+        coinDOGE.coinName = "DOGE"
+        coinDOGE.coinViewName = "Ð DOGE"
+        cryptoCoins.append(coinDOGE)
+        
         
         let coinUSD = Coins()
         coinUSD.coinName = "USD"
         coinUSD.coinViewName = "$ USD"
         coins.append(coinUSD)
         
-        // Crypto
-        let coinDOGE = Coins()
-        coinDOGE.coinName = "DOGE"
-        coinDOGE.coinViewName = "Ð DOGE"
-        cryptoCoins.append(coinDOGE)
+        let coinRUB = Coins()
+        coinRUB.coinName = "RUB"
+        coinRUB.coinViewName = "₽ RUB"
+        coins.append(coinRUB)
         
-        let coinBTC = Coins()
-        coinBTC.coinName = "BTC"
-        coinBTC.coinViewName = "₿ BTC"
-        cryptoCoins.append(coinBTC)
+        let coinEUR = Coins()
+        coinEUR.coinName = "EUR"
+        coinEUR.coinViewName = "€ EUR"
+        coins.append(coinEUR)
+
         
-        let coinETH = Coins()
-        coinETH.coinName = "ETH"
-        coinETH.coinViewName = "Ξ ETH"
-        cryptoCoins.append(coinETH)
-        
-        let coinLTC = Coins()
-        coinLTC.coinName = "LTC"
-        coinLTC.coinViewName = "Ł LTC"
-        cryptoCoins.append(coinLTC)
+        loadItems()
         
         pickConvertCoin.reloadAllComponents()
         
@@ -100,6 +104,9 @@ class CoinViewController: UIViewController {
                 }
 
                 self.coins.append(coinCustom)
+                
+                self.saveItems(coinsList: self.coins, filePath: self.coinDataFile!)
+
             }
 
             if cryptoCoinTextField.text! != "" {
@@ -107,6 +114,9 @@ class CoinViewController: UIViewController {
                 cryptoCoinCustom.coinName = cryptoCoinTextField.text!
                 cryptoCoinCustom.coinViewName = "\(getCrypoCoinSymbol(cryptoCoinTextField.text!)) \(cryptoCoinTextField.text!)"
                 self.cryptoCoins.append(cryptoCoinCustom)
+                
+                self.saveItems(coinsList: self.cryptoCoins, filePath: self.cryptoCoinDataFile!)
+                
             }
 
             self.pickConvertCoin.reloadAllComponents()
@@ -130,6 +140,7 @@ class CoinViewController: UIViewController {
 
         present(alert, animated: true, completion: nil)
     }
+    
 }
 
 
@@ -221,6 +232,41 @@ extension CoinViewController: CoinManagerDelegate {
     }
 }
 
+extension CoinViewController {
+    
+    func loadItems() {
+        // Load crypto coins
+        if let cryptoData = try? Data(contentsOf: cryptoCoinDataFile!) {
+            let decoder = PropertyListDecoder()
+            
+            do {
+                cryptoCoins = try decoder.decode([Coins].self, from: cryptoData)
+            } catch {
+                print("Error decoding cryptoData array, \(error)")
+            }
+        }
+        // Load coins
+        if let data = try? Data(contentsOf: coinDataFile!) {
+            let decoder = PropertyListDecoder()
+            
+            do {
+                coins = try decoder.decode([Coins].self, from: data)
+            } catch {
+                print("Error decoding data array, \(error)")
+            }
+        }
+    }
+    
+    func saveItems(coinsList: [Coins], filePath: URL) {
+        do {
+            let data = try self.encoder.encode(coinsList)
+            try data.write(to: filePath)
+        } catch {
+            print("Error encoding item array, \(error)")
+        }
+    }
+}
+
 //MARK: - FileManager
 
 func getCrypoCoinSymbol(_ inputName: String) -> String {
@@ -257,3 +303,6 @@ func getSymbol(forCurrencyCode code: String) -> String? {
     }
     return locale.displayName(forKey: .currencySymbol, value: code)
 }
+
+
+
