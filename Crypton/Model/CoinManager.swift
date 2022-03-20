@@ -22,7 +22,7 @@ struct CoinManager {
 
     func fetchExchangeRate(_ from: String, to: String) {
         
-        let finalURL = "\(coinURL)/\(from)/\(to)?apikey=2E9AC9DA-E7DB-4BDE-8CDE-1598D1DF8C1D&output_format=json"
+        let finalURL = "\(coinURL)/\(from)/\(to)?apikey=&output_format=json"
         
         // Выполнить запрос по URL
         performRequest(with: finalURL)
