@@ -1,6 +1,6 @@
 # Crypton
 
-The Crypto coin converter to cash.
+Crypto coin to cash converter. With the ability to add custom ones.
 
 ## Getting started
 
